@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
-
 void main() {
   Get.put(MenuController());
   Get.put(NavigationController());
@@ -23,18 +21,15 @@ class MyApp extends StatelessWidget {
       title: 'Dashboard',
       theme: ThemeData(
         scaffoldBackgroundColor: light,
-        textTheme: GoogleFonts.mulishTextTheme(Theme.of(context).textTheme).apply(
-          bodyColor: Colors.black
-        ),
-            pageTransitionsTheme: const PageTransitionsTheme(
-      builders: {
-        TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
-        TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
-      }
-    ),
+        textTheme: GoogleFonts.mulishTextTheme(Theme.of(context).textTheme)
+            .apply(bodyColor: Colors.black),
+        pageTransitionsTheme: const PageTransitionsTheme(builders: {
+          TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
+          TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+        }),
         primarySwatch: Colors.blue,
       ),
-       home: AuthenticationPage(),
+      home: AuthenticationPage(),
     );
   }
 }
